@@ -33,7 +33,7 @@ namespace NLayer.Caching
 
             if(!_memoryCache.TryGetValue(CacheProductKey, out _)) 
             {
-                _memoryCache.Set(CacheProductKey, _repository.GetProductWitCategory().Result);
+                _memoryCache.Set(CacheProductKey, _repository.GetProductsWithCategory().Result);
             }//memoryde yoksa al
         }//ctor eklemelerini yaptım
 
@@ -75,13 +75,13 @@ namespace NLayer.Caching
             return Task.FromResult(product);
         }
 
-        public Task<List<ProductWithCategoryDto>> GetProductWitCategory()
+        public Task<CustomResponseDto<List<ProductWithCategoryDto>>> GetProductsWithCategory()
         {
                var products = _memoryCache.Get<IEnumerable<Product>>(CacheProductKey);
 
                 var productWithCategoryDto = _mapper.Map<List<ProductWithCategoryDto>>(products);
 
-                return Task.FromResult(productWithCategoryDto);
+                return Task.FromResult(CustomResponseDto<List<ProductWithCategoryDto>>.Success(200,productWithCategoryDto));
             ;
         }
 

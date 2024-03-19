@@ -19,7 +19,7 @@ namespace NLayer.Repository.Repositories
 
         //burada generic repositoryi miras alacak ki hazır fonksiyonlar gelsin
         //implementasyonu yaptığımda sadece bir method geldi. çünkü generic repositoryde var hazır crud fonksiyonları
-        public async Task<List<Product>> GetProductWitCategory()
+        public async Task<List<Product>> GetProductsWithCategory()
         {
 
             //Eagle Loading

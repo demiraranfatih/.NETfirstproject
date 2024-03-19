@@ -39,7 +39,8 @@
             //programcs de belirlemiş olduğum
             //genericleri yukarıda yapacağım eklemeyi unitofwork generic değil 
 
-            builder.RegisterType<ProductServiceWithCatching>().As<IProductService>();
+            /*cacheden okumasın artık diyorum.*/
+        //    builder.RegisterType<ProductServiceWithCatching>().As<IProductService>();
 
 
 

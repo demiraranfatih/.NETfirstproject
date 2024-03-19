@@ -35,7 +35,7 @@ namespace NLayer.API.Controllers
         public async Task<IActionResult> GetProductsWithCategory()
         {
             //   return CreateActionResult(await productService.GetProductWitCategory());
-            return CreateActionResult(await _service.GetProductWitCategory());
+            return CreateActionResult(await _service.GetProductsWithCategory());
         }
         //bu şekilde tek satırda da halledebilirim kodlama işini.
         //aslında bunu yapma kısmı controller kısmında minimum kod gerekiyordu bunu sagladı

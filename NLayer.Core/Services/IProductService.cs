@@ -10,6 +10,6 @@ namespace NLayer.Core.Services
 {
     public interface IProductService : IService<Product>
     {//burada product dönmeyeceğim productla beraber category de dönmem gerekiyor
-         Task<List<ProductWithCategoryDto>> GetProductWitCategory();
+         Task<CustomResponseDto<List<ProductWithCategoryDto>>> GetProductsWithCategory();
     }
 }

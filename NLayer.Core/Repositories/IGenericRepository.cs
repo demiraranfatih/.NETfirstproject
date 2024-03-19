@@ -13,8 +13,9 @@ namespace NLayer.Core.Repositories
         //productRepository.where(x=>x.id>5).OrderBy.TolistAsync(); buradaki to list async veritabanına gidiyor.
         //t alacak bool dönecek expression burada değişken küçük harfle başlayan için
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
-        Task<bool> AnyAsync(Expression<Func<T, bool>> expression);
 
+        Task<bool> AnyAsync(Expression<Func<T, bool>> expression); // 
+        //bool hasAny = await AnyAsync(x => x.Property == someValue); gibi düşün
         Task AddAsync(T entity);
 
         Task AddRangeAsync(IEnumerable<T> entities);

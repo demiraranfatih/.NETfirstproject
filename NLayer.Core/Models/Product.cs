@@ -17,9 +17,9 @@ namespace NLayer.Core.Models
         public int Stock { get; set; }
         public decimal Price { get; set; }
         public int CategoryId { get; set; } // foreign key
-        public Category Category { get; set; } // sadece 1 
+        public Category Category { get; set; } // sadece 1 tane olacağını belirliyorum
 
-        public ProductFeature ProductFeature { get; set; }
+        public ProductFeature ProductFeature { get; set; } // sadece 1 tane olacağını belirliyorum.
     }
 }
 /*String ve sınıflar referans tiplidir 

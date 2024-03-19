@@ -24,13 +24,13 @@ namespace NLayer.Service.Services
 
         //mvc'ye adapte için düzenledim.
         //burayı düzenlediğim için ıproduct service'de de düzenlemem gerekiyor.
-        public async Task<List<ProductWithCategoryDto>> GetProductWitCategory()
+        public async Task<CustomResponseDto<List<ProductWithCategoryDto>>> GetProductsWithCategory()
         {
             //controllerda yaptığım işlemleri burada yaptım asloında
-            var products = await _productRepository.GetProductWitCategory();
+            var products = await _productRepository.GetProductsWithCategory();
 
             var productsDto = _mapper.Map<List<ProductWithCategoryDto>>(products);
-            return productsDto;
+            return CustomResponseDto<List<ProductWithCategoryDto>>.Success(200, productsDto);
         }
     }
 }
